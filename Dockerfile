@@ -4,10 +4,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get clean
 
+ADD https://s3.amazonaws.com/parsec-build/package/parsec-rpi.deb /root/parsec-rpi.deb
+
 WORKDIR /root/
-
-ADD https://s3.amazonaws.com/parsec-build/package/parsec-rpi.deb parsec-rpi.deb
-
 RUN dpkg -i parsec-rpi.deb && rm parsec-rpi.deb
 
 RUN mkdir -p /root/.parsec && \
