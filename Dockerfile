@@ -1,6 +1,6 @@
 FROM arm32v7/debian:buster-slim
-
 ENV DEBIAN_FRONTEND noninteractive
+COPY qemu-arm-static /usr/bin
 
 RUN apt-get update && apt-get clean
 
