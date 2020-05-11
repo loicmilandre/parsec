@@ -2,8 +2,6 @@
 
 set -e
 
-docker build --rm -t parsec-rpi .
-
 docker run \
 --env LD_LIBRARY_PATH=/opt/vc/lib  \
 --volume /opt/vc/lib/libopenmaxil.so:/opt/vc/lib/libopenmaxil.so \
@@ -12,5 +10,5 @@ docker run \
 --volume /opt/vc/lib/libvchiq_arm.so:/opt/vc/lib/libvchiq_arm.so \
 --volume /opt/vc/lib/libbrcmGLESv2.so:/opt/vc/lib/libbrcmGLESv2.so \
 --volume /opt/vc/lib/libbrcmEGL.so:/opt/vc/lib/libbrcmEGL.so \
---privileged --rm -it parsec-rpi
+--privileged --rm -it loicmilandre/parsec:latest-arm32v7
 
