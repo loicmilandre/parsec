@@ -1,4 +1,4 @@
-FROM --platform=linux/arm/7 debian:buster-slim
+FROM debian:buster-slim
 ENV DEBIAN_FRONTEND noninteractive
 COPY qemu-arm-static /usr/bin
 

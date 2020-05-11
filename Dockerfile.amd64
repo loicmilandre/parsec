@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 debian:buster-slim
+FROM debian:buster-slim
 ENV DEBIAN_FRONTEND noninteractive
 COPY qemu-x86_64-static /usr/bin
 
