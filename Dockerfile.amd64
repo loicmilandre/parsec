@@ -1,7 +1,10 @@
 FROM amd64/debian:buster-slim
 ENV DEBIAN_FRONTEND noninteractive
+COPY qemu-x86_64-static /usr/bin
 
-RUN apt-get update && apt-get clean
+RUN apt-get update && \
+apt-get -y install libgl1-mesa-glx libgl1 libsm6 libx11-6 libxxf86vm1 && \
+apt-get clean
 
 ADD https://builds.parsecgaming.com/package/parsec-linux.deb /root/parsec-linux.deb
 
