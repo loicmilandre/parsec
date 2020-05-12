@@ -7,6 +7,7 @@ BUILD_ARCH=$(echo "${DOCKERFILE_PATH}" | cut -d '.' -f 2)
 QEMU_USER_STATIC_ARCH=$( \
 [ "${BUILD_ARCH}" == "arm32v7" ] && echo "arm" ; \
 [ "${BUILD_ARCH}" == "armhf" ] && echo "arm" ; \
+[ "${BUILD_ARCH}" == "i386" ] && echo "x86_64" ; \
 [ "${BUILD_ARCH}" == "amd64" ] && echo "x86_64" \
 )
 
